@@ -208,8 +208,8 @@ async function getOceanBus() {
 
   // Auto-register if no credentials
   if (!creds) {
-    const reg = await ob.register();
-    const openid = await ob.getOpenId();
+    const reg = await ob.createIdentity();
+    const openid = await ob.getAddress();
     saveCredentials(reg.agent_id, reg.api_key, openid);
   }
 
